@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Observer : MonoBehaviour
+public class PointOfView : MonoBehaviour
 {
     public Transform player;
     public GameEnding gameEnding;
@@ -13,6 +13,7 @@ public class Observer : MonoBehaviour
     {
         if (other.transform == player)
         {
+            Debug.Log("Entered");
             m_IsPlayerInRange = true;
         }
     }
@@ -37,7 +38,7 @@ public class Observer : MonoBehaviour
             {
                 if (raycastHit.collider.transform == player)
                 {
-
+                    gameEnding.CaughtPlayer();
                 }
             }
         }
